@@ -1,3 +1,3 @@
 # FEBio_DemirayUncoupled
 
-$$\bar{W}=1$$
+$$\bar{W}=\frac{a}{b}\left[ exp(\frac{b}{2}(\bar{I_1}-3))-1\right]$$
