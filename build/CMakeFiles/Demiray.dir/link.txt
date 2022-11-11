@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared -Wl,-soname,libDemiray.so -o libDemiray.so CMakeFiles/Demiray.dir/src/DemirayUncoupled.cpp.o CMakeFiles/Demiray.dir/src/dllmain.cpp.o  -Wl,-rpath,"\$ORIGIN/../lib/" /home/autrera/FEBioStudio/sdk/lib/libfebiomech.a /home/autrera/FEBioStudio/sdk/lib/libfecore.a 

@@ -1,0 +1,3 @@
+/home/autrera/git/FEBio_DemirayUncoupled/build/CMakeFiles/Demiray.dir
+/home/autrera/git/FEBio_DemirayUncoupled/build/CMakeFiles/edit_cache.dir
+/home/autrera/git/FEBio_DemirayUncoupled/build/CMakeFiles/rebuild_cache.dir

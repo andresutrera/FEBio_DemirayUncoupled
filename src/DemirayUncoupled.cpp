@@ -3,8 +3,8 @@
 #include <FECore/log.h>
 
 BEGIN_FECORE_CLASS(DemirayUncoupled, FEUncoupledMaterial)
-	ADD_PARAMETER(m_a, FE_RANGE_GREATER(0.0), "a");
-	ADD_PARAMETER(m_b, FE_RANGE_GREATER(0.0), "b");
+	ADD_PARAMETER(m_a, FE_RANGE_GREATER(0.0), "a_dem");
+	ADD_PARAMETER(m_b, FE_RANGE_GREATER(0.0), "b_dem");
 END_FECORE_CLASS();
 
 mat3ds DemirayUncoupled::DevStress(FEMaterialPoint& mp)
@@ -106,4 +106,22 @@ tens4ds DemirayUncoupled::DevTangent(FEMaterialPoint& mp)
 	// double cte = 2.0*a*pow(J, -2.0/3.0)*exp(0.5*b*(pow(J, -2.0/3.0)*I1-3.0));
 	// tens4ds tangent = cte*((pow(J, -2.0/3.0)*b/2.0*(IxI-1.0/3.0*I1*Cm1xI)-1.0/3.0*Cm1xI)-(1.0/3.0+0.5*b/3.0*I1*pow(J, -2.0/3.0))*(IxCm1-1.0/3.0*I1*Cm1xCm1)+1.0/3.0*I1*I4th);
 	// return pt.push_forward(tangent);
+}
+
+
+double DemirayUncoupled::DevStrainEnergyDensity(FEMaterialPoint& mp){
+
+	FEElasticMaterialPoint& pt = *mp.ExtractData<FEElasticMaterialPoint>();
+	double a = m_a(mp);
+	double b = m_b(mp);
+	// deformation gradient
+	//double J = pt.m_J;
+	// calculate left Cauchy-Green tensor
+	mat3ds B = pt.LeftCauchyGreen();
+	// mat3ds C = pt.RightCauchyGreen();
+	double I1 = B.tr();	
+	// mat3ds Cm1 = C.inverse();
+
+	//double W = a/b*(exp(0.5*b*(I1-3))-1.0)
+	return a/b*(exp(0.5*b*(I1-3))-1.0);
 }

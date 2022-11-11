@@ -53,7 +53,8 @@ public:
 	// It takes one parameter, the FEMaterialPoint and retursn a tens4ds object
 	// which is a fourth-order tensor with major and minor symmetries.
 	virtual tens4ds DevTangent(FEMaterialPoint& pt);
-	void logMat3ds(mat3ds mat, string str);
+	virtual double DevStrainEnergyDensity(FEMaterialPoint& pt);
+	//void logMat3ds(mat3ds mat, string str);
 
 
 	// This macro defines that the class will define a material parameter list.
