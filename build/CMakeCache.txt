@@ -208,9 +208,6 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Dependencies for the target
-Demiray_LIB_DEPENDS:STATIC=optimized;/home/autrera/FEBioStudio/sdk/lib/libfebiomech.a;general;/home/autrera/FEBioStudio/sdk/lib/libfecore.a;
-
 //Value Computed by CMake
 FEBIOPlugins_BINARY_DIR:STATIC=/home/autrera/git/FEBio_DemirayUncoupled/build
 
@@ -220,23 +217,17 @@ FEBIOPlugins_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 FEBIOPlugins_SOURCE_DIR:STATIC=/home/autrera/git/FEBio_DemirayUncoupled
 
-//Path to the DBG FEBio lib directory.
-FEBio_DBG_LIB_DIR:PATH=/home/autrera/FEBioStudio/sdk/lib
-
 //Path to FEBio include directory.
-FEBio_INC:PATH=/home/autrera/FEBioStudio/sdk/include
-
-//Path to the FEBio lib directory.
-FEBio_LIB_DIR:PATH=/home/autrera/FEBioStudio/sdk/lib
+FEBio_INC:PATH=/home/autrera/FEBioStudio2/sdk/include
 
 //Path to the FEBio SDK, or git repo.
-FEBio_SDK:PATH=/home/autrera/FEBioStudio/sdk
+FEBio_SDK:PATH=/home/autrera/FEBioStudio2/sdk
+
+//FEBio library path
+FECORE:FILEPATH=FECORE-NOTFOUND
 
 //Don't edit. Old SDK path used to automatically make changes.
-OLD_SDK:PATH=/home/autrera/FEBioStudio/sdk
-
-//No help, variable specified on the command line.
-name:UNINITIALIZED=Demiray
+OLD_SDK:PATH=/home/autrera/FEBioStudio2/sdk
 
 
 ########################
@@ -388,12 +379,8 @@ CMAKE_STRIP-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: FEBio_DBG_LIB_DIR
-FEBio_DBG_LIB_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: FEBio_INC
 FEBio_INC-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: FEBio_LIB_DIR
-FEBio_LIB_DIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: OLD_SDK
 OLD_SDK-ADVANCED:INTERNAL=1
 

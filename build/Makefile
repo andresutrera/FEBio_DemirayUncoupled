@@ -117,24 +117,24 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named Demiray
+# Target rules for targets named febioplugin
 
 # Build rule for target.
-Demiray: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Demiray
-.PHONY : Demiray
+febioplugin: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 febioplugin
+.PHONY : febioplugin
 
 # fast build rule for target.
-Demiray/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/build
-.PHONY : Demiray/fast
+febioplugin/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/build
+.PHONY : febioplugin/fast
 
 src/DemirayUncoupled.o: src/DemirayUncoupled.cpp.o
 .PHONY : src/DemirayUncoupled.o
 
 # target to build an object file
 src/DemirayUncoupled.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/src/DemirayUncoupled.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/src/DemirayUncoupled.cpp.o
 .PHONY : src/DemirayUncoupled.cpp.o
 
 src/DemirayUncoupled.i: src/DemirayUncoupled.cpp.i
@@ -142,7 +142,7 @@ src/DemirayUncoupled.i: src/DemirayUncoupled.cpp.i
 
 # target to preprocess a source file
 src/DemirayUncoupled.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/src/DemirayUncoupled.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/src/DemirayUncoupled.cpp.i
 .PHONY : src/DemirayUncoupled.cpp.i
 
 src/DemirayUncoupled.s: src/DemirayUncoupled.cpp.s
@@ -150,7 +150,7 @@ src/DemirayUncoupled.s: src/DemirayUncoupled.cpp.s
 
 # target to generate assembly for a file
 src/DemirayUncoupled.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/src/DemirayUncoupled.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/src/DemirayUncoupled.cpp.s
 .PHONY : src/DemirayUncoupled.cpp.s
 
 src/dllmain.o: src/dllmain.cpp.o
@@ -158,7 +158,7 @@ src/dllmain.o: src/dllmain.cpp.o
 
 # target to build an object file
 src/dllmain.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/src/dllmain.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/src/dllmain.cpp.o
 .PHONY : src/dllmain.cpp.o
 
 src/dllmain.i: src/dllmain.cpp.i
@@ -166,7 +166,7 @@ src/dllmain.i: src/dllmain.cpp.i
 
 # target to preprocess a source file
 src/dllmain.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/src/dllmain.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/src/dllmain.cpp.i
 .PHONY : src/dllmain.cpp.i
 
 src/dllmain.s: src/dllmain.cpp.s
@@ -174,7 +174,7 @@ src/dllmain.s: src/dllmain.cpp.s
 
 # target to generate assembly for a file
 src/dllmain.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Demiray.dir/build.make CMakeFiles/Demiray.dir/src/dllmain.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/febioplugin.dir/build.make CMakeFiles/febioplugin.dir/src/dllmain.cpp.s
 .PHONY : src/dllmain.cpp.s
 
 # Help Target
@@ -185,7 +185,7 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... Demiray"
+	@echo "... febioplugin"
 	@echo "... src/DemirayUncoupled.o"
 	@echo "... src/DemirayUncoupled.i"
 	@echo "... src/DemirayUncoupled.s"

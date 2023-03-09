@@ -29,7 +29,7 @@ else()
 	set(TEMP_PATHS ${CMAKE_SOURCE_DIR}/.. ${CMAKE_SOURCE_DIR}/../.. $ENV{HOME}/ $ENV{HOME}/*)
 endif()
     
-find_path(FEBio_SDK FECore/Archive.h
+find_path(FEBio_SDK FECore/BSpline.h
     PATHS ${TEMP_PATHS}
     PATH_SUFFIXES FEBio
     DOC "Path to the FEBio SDK, or git repo.")
@@ -43,7 +43,7 @@ if(NOT FEBio_SDK)
         set(TEMP_PATHS  /opt/* $ENV{HOME}/*)
     endif() 
     
-    find_path(FEBio_SDK "include/FECore/Archive.h"
+    find_path(FEBio_SDK "include/FECore/BSpline.h"
         PATHS ${TEMP_PATHS}
         PATH_SUFFIXES sdk
         DOC "Path to the FEBio SDK, or git repo.")
@@ -93,20 +93,7 @@ if(NEWPATH)
         PATH_SUFFIXES ${LIB_SUFFIXES}
         DOC "FEBio library path")
 
-    if(FECORE)
-        get_filename_component(FECORE_TEMP ${FECORE} DIRECTORY)
-        set(FEBio_LIB_DIR ${FECORE_TEMP} CACHE PATH "Path to the FEBio lib directory." FORCE)
-        mark_as_advanced(FEBio_LIB_DIR)
-        set(FEBio_DBG_LIB_DIR ${FECORE_TEMP} CACHE PATH "Path to the DBG FEBio lib directory." FORCE)
-	mark_as_advanced(FEBio_DBG_LIB_DIR)
-        unset(FECORE_TEMP)
-        unset(FECORE CACHE)
-    else()
-        set(FEBio_LIB_DIR CACHE PATH "Path to the FEBio lib directory." FORCE)
-        set(FEBio_DBG_LIB_DIR CACHE PATH "Path to the FEBio debug lib directory." FORCE)
-	message(SEND_ERROR "Unable to find FEBio Library path automatically. Set FEBio_LIB_DIR.")
-        unset(FECORE CACHE)
-    endif()
+
 endif()
 
 set(OLD_SDK ${FEBio_SDK} CACHE PATH "Don't edit. Old SDK path used to automatically make changes." FORCE)
@@ -201,6 +188,6 @@ add_library(${name} SHARED ${HDR} ${SRC})
 
 ##### Link Libraries #####
 
-target_link_libraries(${name} optimized ${FEBIOLIB} ${FEBIOMIX} ${FEBIOPLOT} ${FEBIOXML} ${FEBIORVE} ${FEBIOMECH} ${FECORE})
+#target_link_libraries(${name} optimized ${FEBIOLIB} ${FEBIOMIX} ${FEBIOPLOT} ${FEBIOXML} ${FEBIORVE} ${FEBIOMECH} ${FECORE})
 #target_link_libraries(NeoHooke optimized ${FEBIOLIB} optimized ${FEBIOMIX} optimized ${FEBIOPLOT} optimized ${FEBIOXML} optimized ${FEBIORVE} optimized ${FEBIOMECH} optimized ${FECORE})
 #target_link_libraries(AngioFE debug ${FEBIOLIB_DBG} debug ${FEBIOMIX_DBG} debug ${FEBIOPLOT_DBG} debug ${FEBIOXML_DBG} debug ${FEBIORVE_DBG} debug ${FEBIOMECH_DBG} debug ${FECORE_DBG})
